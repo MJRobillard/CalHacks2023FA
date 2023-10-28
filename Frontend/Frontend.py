@@ -3,3 +3,4 @@
 #Blue User Defined, 
 #Green IDK maybe like something for loops or function declaration
 #
+#https://docs.taipy.io/en/latest/knowledge_base/demos/image_classif/
