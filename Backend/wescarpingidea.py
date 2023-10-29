@@ -1,4 +1,4 @@
-from utilities import print_emotions
+
 
 from hume import HumeBatchClient
 from hume.models.config import NerConfig
