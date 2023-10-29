@@ -18,6 +18,7 @@ headers = {"Authorization": f"Bearer {API_TOKEN}"}
 optionsImage = [] ##
 optionsValue = []
 actualOptions = []
+dictionaryFileToValue = []
 
 def sim(image1,image2) :
   image1 = cv2.imread("cropped_image2.jpg")
@@ -91,9 +92,6 @@ def ocr_space_url(url, overlay=False, api_key='helloworld', language='eng'):
 
 
 
-    
-
-
 def ocr(filename):
     with open(filename, "rb") as f:
         data = f.read()
@@ -123,6 +121,10 @@ options1= options[:split_point]
 for file in options2:
   actualOptions.append(ocr(file))
   
+  
+
 print(actualOptions)
 print(options2, "values")
-print(options1, "image")
+dictionaryFileToValue = dict(zip(options2,actualOptions))
+print(int(dictionaryFileToValue['cropped_image5.jpg']) + int(dictionaryFileToValue['cropped_image6.jpg'] ))
+print(dictionaryFileToValue)
