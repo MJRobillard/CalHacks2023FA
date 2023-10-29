@@ -3,6 +3,12 @@ from typing import Any, Dict, List
 
 from hume import HumeBatchClient
 from hume.models.config import NerConfig
+from hume.models.config import LanguageConfig
+
+def print_sentiment(sentiment: List[Dict[str, Any]]) -> None:
+    sentiment_map = {e["name"]: e["score"] for e in sentiment}
+    for rating in range(1, 10):
+        print(f"- Sentiment {rating}: {sentiment_map[str(rating)]:4f}")
 
 def print_emotions(emotions: List[Dict[str, Any]]) -> None:
     emotion_map = {e["name"]: e["score"] for e in emotions}
@@ -19,10 +25,11 @@ with open(file_path, 'w') as file:
 
 # Submit the obama.txt file from the local disk
 files = ["test.txt"]
-config = NerConfig()
+config = LanguageConfig(sentiment={})
 job = client.submit_job([], [config], files=files)
 
 print("Running...", job)
+
 job.await_complete()
 print("Job completed with status: ", job.get_status())
 
