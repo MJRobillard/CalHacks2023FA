@@ -12,7 +12,7 @@ pytesseract.pytesseract.tesseract_cmd = r'<full_path_to_your_tesseract_executabl
 # Example tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
 
 API_URL = "https://api-inference.huggingface.co/models/microsoft/trocr-base-handwritten"
-API_TOKEN = "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"
+API_TOKEN = "HIDDEN"
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
 optionsImage = [] ##
